@@ -2,6 +2,7 @@ package api.endpoints;
 import static io.restassured.RestAssured.given;
 
 import api.payload.authentication;
+import api.utilities.TokenStore;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -21,5 +22,19 @@ public class userEndPoints {
 		.post(Routes.accessToken_url);
 	
 	return AuthToken;
+	}
+	
+	public static Response getFLAlerts(String token)
+	{
+		String tokenFL = TokenStore.getToken("GCLI03572832T"); // Retrieve token for the user "one"
+		
+		Response getFLAlerts = given()
+				.accept(ContentType.JSON)
+				.auth().oauth2(tokenFL)
+				.when()
+				.get(Routes.getAlerts_url);
+		
+		return getFLAlerts;
+		
 	}
 }
