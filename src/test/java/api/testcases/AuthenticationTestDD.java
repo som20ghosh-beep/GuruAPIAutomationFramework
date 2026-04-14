@@ -34,7 +34,7 @@ public class AuthenticationTestDD {
     // ✅ Store token mapped to user
     TokenStore.setToken(client_id, token);
 
-    System.out.println("Stored token for: " + client_id );
+    System.out.println("Stored token for: one " + client_id );
 	
 	
 	}
