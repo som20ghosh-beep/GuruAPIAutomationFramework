@@ -1,6 +1,7 @@
 package api.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import api.endpoints.userEndPoints;
@@ -11,7 +12,7 @@ import api.utilities.TokenStore;
 import io.restassured.response.Response;
 
 public class AuthenticationTestDD {
-
+	
 	@Test(dataProvider = "userCredentialData",  dataProviderClass = DataProviders.class)
 	public void getAccessTokenTest(String grant_type, String client_id, String client_secret) 
 	{

@@ -12,8 +12,7 @@ public class authentication {
 	String grant_type;
 	String client_id;
 	String client_secret;
-
-
+	
 	public String getGrant_type() {
 		return grant_type;
 	}
@@ -33,8 +32,7 @@ public class authentication {
 		this.client_secret = client_secret;
 	}
 
-
-
+	
 
 
 
