@@ -7,7 +7,7 @@ import api.payload.authentication;
 import api.utilities.TokenStore;
 import io.restassured.response.Response;
 
-public class GetAlerts {
+public class GetAlertsTest {
 
 	@Test
 	public void getFLAlerts() {

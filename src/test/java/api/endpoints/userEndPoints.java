@@ -78,5 +78,21 @@ public class userEndPoints {
 		return EmpJobs;
 	}
 	
+	public static Response getUnviewedFLJobInvitations(String token)
+	{
+		Response unviewedFLJobInvite = given().accept(ContentType.JSON)
+				.auth().oauth2(token)
+				.when()
+				.get(Routes.unviewedFLJobInvitations_url);
+		return unviewedFLJobInvite;
+	}
+	
+	public static Response getFLJobs(String token) {
+		Response flJobs = given().accept(ContentType.JSON)
+				.auth().oauth2(token)
+				.when()
+				.get(Routes.getFLJobs_url);
+		return flJobs;
+	}
 	
 }

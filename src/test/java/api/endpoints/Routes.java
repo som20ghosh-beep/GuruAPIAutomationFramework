@@ -21,5 +21,11 @@ public class Routes {
  	
  	//URL for Get Employer Jobs
  	public static String getEmployerJobs_url = base_url + "/employer/jobs";
+ 	
+ 	//URL for unviewed freelancer Job Invitations
+	public static String unviewedFLJobInvitations_url = base_url + "/freelancer/job/invitations";
+	
+	//URL for Get Freelancer Jobs list/Quote
+	public static String getFLJobs_url = base_url + "/freelancer/jobs";
 	
 }
