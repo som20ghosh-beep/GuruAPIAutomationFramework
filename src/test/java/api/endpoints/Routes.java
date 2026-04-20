@@ -28,4 +28,7 @@ public class Routes {
 	//URL for Get Freelancer Jobs list/Quote
 	public static String getFLJobs_url = base_url + "/freelancer/jobs";
 	
+	//URL for Get pending job acceptance
+	public static String pendingJobAcceptance_url = base_url + "/freelancer/jobs/pendingaccept";
+	
 }

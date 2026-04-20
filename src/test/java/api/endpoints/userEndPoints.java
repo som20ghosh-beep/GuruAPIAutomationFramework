@@ -95,4 +95,14 @@ public class userEndPoints {
 		return flJobs;
 	}
 	
+	public static Response getPendingJobAcceptance(String token)
+	{
+		Response pendingJobAccept = given().accept(ContentType.JSON)
+				.auth().oauth2(token)
+				.when()
+				.get(Routes.pendingJobAcceptance_url);
+		
+		return pendingJobAccept;
+	}
+	
 }
