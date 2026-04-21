@@ -20,9 +20,6 @@ public class FLJobsQuotesTest {
 		flJobs.then().log().all();
 		
 		Assert.assertEquals(flJobs.statusCode(), 200, "Expected status code 200, but got " + flJobs.statusCode());
-		String jobDetails = flJobs.getBody().asString();
-		//Assert.assertTrue(jobDetails.contains("2098890"), "Job ID 2098890 is not present in the response");
-		
 		List<Integer> jobIds = flJobs.jsonPath().getList("Data.JobId");
 		Assert.assertNotNull(jobIds, "Job ID list is null — check JSON path");
 

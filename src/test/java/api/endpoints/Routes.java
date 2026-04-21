@@ -31,4 +31,7 @@ public class Routes {
 	//URL for Get pending job acceptance
 	public static String pendingJobAcceptance_url = base_url + "/freelancer/jobs/pendingaccept";
 	
+	//URL for posting job question by Freelancer
+	public static String postFLJobQues_url = base_url + "/jobs/{jobid}/qna";
+	
 }

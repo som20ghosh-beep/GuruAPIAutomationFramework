@@ -1,6 +1,7 @@
 package api.endpoints;
 import static io.restassured.RestAssured.given;
 
+import api.payload.JobFLQuesAns;
 import api.payload.authentication;
 import api.utilities.TokenStore;
 import io.restassured.http.ContentType;
@@ -104,5 +105,19 @@ public class userEndPoints {
 		
 		return pendingJobAccept;
 	}
+	
+	
+	public static Response postJobQues(String token, String jobID, JobFLQuesAns payload)
+	{
+		Response postJobQues = given().log().all().contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
+				.auth().oauth2(token).pathParam("jobid", jobID)
+				.body(payload)
+				.when()
+				.post(Routes.postFLJobQues_url);
+		
+		return postJobQues;
+	}
+
 	
 }
