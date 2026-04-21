@@ -119,5 +119,15 @@ public class userEndPoints {
 		return postJobQues;
 	}
 
+	public static Response getAllProjectQnA(String token, int jobid)
+	{
+		Response allJobQnA = given().accept(ContentType.JSON)
+		.auth().oauth2(token).pathParam("jobid", jobid)
+		.when()
+		.get(Routes.getProjQnA_url);
+		
+		return allJobQnA;
+	}
+	
 	
 }

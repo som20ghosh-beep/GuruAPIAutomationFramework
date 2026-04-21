@@ -34,4 +34,7 @@ public class Routes {
 	//URL for posting job question by Freelancer
 	public static String postFLJobQues_url = base_url + "/jobs/{jobid}/qna";
 	
+	//URL for Get  Project All Question and Answers
+	public static String getProjQnA_url = base_url + "/jobs/{jobid}/qna/all";
+	
 }
