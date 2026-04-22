@@ -130,4 +130,15 @@ public class userEndPoints {
 	}
 	
 	
+	public static Response getJobdetails(String token, int jobid) {
+		
+		Response jobDetails = given().accept(ContentType.JSON).auth().oauth2(token).pathParam("jobid", jobid)
+		.when()
+		.get(Routes.getJobDetails_url);
+		
+		return jobDetails;
+		
+	}
+	
+	
 }

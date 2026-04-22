@@ -37,4 +37,7 @@ public class Routes {
 	//URL for Get  Project All Question and Answers
 	public static String getProjQnA_url = base_url + "/jobs/{jobid}/qna/all";
 	
+	//URL for Get Job details
+	public static String getJobDetails_url = base_url + "/jobs/{jobid}/summary";
+	
 }
