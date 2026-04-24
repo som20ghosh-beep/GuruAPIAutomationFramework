@@ -82,4 +82,11 @@ public class ResponseValidator {
     public static void validateProjectName(Response res, String jsonPath, String expectedName) {
     	Assert.assertEquals(res.jsonPath().getString(jsonPath), expectedName, "Project name mismatch");
     }
+    
+    //Validate body is not null
+    public static void validateBodyNotEmpty(Response res) {
+    	Assert.assertNotNull(res.getBody(), "Response body is null");
+    	Assert.assertFalse(res.getBody().asString().isEmpty(), "Response body is empty");
+    }
+    
 }

@@ -140,5 +140,13 @@ public class userEndPoints {
 		
 	}
 	
+	public static Response getJobList(String token, String category, String budgetType, String period) {
+		Response jobList =  given().accept(ContentType.JSON).auth().oauth2(token)
+		 .pathParam("category", category).pathParam("budgetType", budgetType).pathParam("period", period)
+		 .when()
+		 .get(Routes.getJobList_url);
+		 return jobList;
+	}
+	
 	
 }
