@@ -42,4 +42,10 @@ public class Routes {
 	
 	//URL for get Job List 
 	public static String getJobList_url = base_url + "/search/job?category={category}&budgetType={budgetType}&period={period}";
+	
+	//URL for Sending invitation for job
+	public static String sendJobInvite_url = base_url + "/employer/jobs/{jobid}/invitations";
+	
+	
+	
 }

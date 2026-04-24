@@ -148,5 +148,15 @@ public class userEndPoints {
 		 return jobList;
 	}
 	
+	 public static Response sendJobInvite(String token, int jobid)
+	 {
+		 Response sendJobInvite =   given().accept(ContentType.JSON).auth().oauth2(token)
+		 .pathParam("jobid", jobid)
+		 .when()
+		 .post(Routes.sendJobInvite_url);
+		 return sendJobInvite;
+	 }
+	
+	
 	
 }
