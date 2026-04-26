@@ -46,6 +46,10 @@ public class Routes {
 	//URL for Sending invitation for job
 	public static String sendJobInvite_url = base_url + "/employer/jobs/{jobid}/invitations";
 	
+	//URL for quote for employer posted job
+	public static String quoteForEmpJob_url = base_url + "/employer/jobs/{jobid}/quotes/filter";
+	
+	
 	
 	
 }

@@ -157,6 +157,15 @@ public class userEndPoints {
 		 return sendJobInvite;
 	 }
 	
+	 public static Response quotesForEmpJob(String token, int jobId) {
+		 
+		Response empQuotes =    given().accept(ContentType.JSON).auth().oauth2(token)
+		 .pathParam("jobid", jobId)
+		 .when()
+		 .get(Routes.quoteForEmpJob_url);
+		
+		return empQuotes;
+		 }
 	
 	
 }
