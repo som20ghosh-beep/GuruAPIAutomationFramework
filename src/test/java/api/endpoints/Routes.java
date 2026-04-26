@@ -49,6 +49,9 @@ public class Routes {
 	//URL for quote for employer posted job
 	public static String quoteForEmpJob_url = base_url + "/employer/jobs/{jobid}/quotes/filter";
 	
+	//URL for List of freelancer templates
+	public static String getFLTemplates_url = base_url + "/freelancer/alltemplates";
+	
 	
 	
 	

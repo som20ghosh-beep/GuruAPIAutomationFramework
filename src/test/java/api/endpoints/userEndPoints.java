@@ -167,5 +167,12 @@ public class userEndPoints {
 		return empQuotes;
 		 }
 	
+	 public static Response getFLTemplates(String token) {
+		Response template =  given().accept(token).auth().oauth2(token)
+		 .when()
+		 .get(Routes.getFLTemplates_url);
+		
+		return template;
+	 }
 	
 }
