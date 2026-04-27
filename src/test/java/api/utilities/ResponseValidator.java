@@ -63,9 +63,26 @@ public class ResponseValidator {
     
     //Exact TotalCount value validation
     public static void validateTotalCount(Response res, int expectedCount) {
-    	
-    	Assert.assertEquals(res.jsonPath().getInt("Data.TotalCount"), expectedCount,    "TotalCount mismatch");
+    
+    	Integer totalCount = null;
+
+        // Try first path
+        if (res.jsonPath().get("TotalCount") != null) {
+            totalCount = res.jsonPath().getInt("TotalCount");
+        }
+        // Try fallback path
+        else if (res.jsonPath().get("Total") != null) {
+            totalCount = res.jsonPath().getInt("Total");
+        }
+
+        // Final validation
+        Assert.assertNotNull(totalCount, "TotalCount not found in response");
+
+        Assert.assertEquals(totalCount, expectedCount, "TotalCount mismatch");
     }
+
+    
+    
     
     //  TotalCount is not zero
     public static void validateTotalCountNotZero(Response res) {

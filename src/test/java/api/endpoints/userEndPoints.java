@@ -175,4 +175,22 @@ public class userEndPoints {
 		return template;
 	 }
 	
+
+	 public static Response getJobApplicationList(String token, int jobid) {
+		 Response jobApplication =  given().accept(ContentType.JSON).auth().oauth2(token)
+		 .pathParam("jobId", jobid)
+		 .when()
+		 .get(Routes.getJobApplicationslist_url);
+		 return jobApplication;
+	 }
+
+
+
+
+
+
+
+
+
+
 }

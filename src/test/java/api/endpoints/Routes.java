@@ -52,7 +52,8 @@ public class Routes {
 	//URL for List of freelancer templates
 	public static String getFLTemplates_url = base_url + "/freelancer/alltemplates";
 	
-	
+	//URL for Get Applications for a Job
+	public static String getJobApplicationslist_url = base_url + "/jobs/applications/{jobId}";
 	
 	
 }
