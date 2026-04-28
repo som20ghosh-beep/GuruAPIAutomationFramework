@@ -2,6 +2,7 @@ package api.endpoints;
 import static io.restassured.RestAssured.given;
 
 import api.payload.JobFLQuesAns;
+import api.payload.SaveQuoteTemplate;
 import api.payload.authentication;
 import api.utilities.TokenStore;
 import io.restassured.http.ContentType;
@@ -185,6 +186,15 @@ public class userEndPoints {
 	 }
 
 
+	 public static Response saveQuoteTemplate(String token, SaveQuoteTemplate payload) {
+		 Response quoteTemplate =  given().accept(ContentType.JSON).auth().oauth2(token)
+				 
+		  .contentType(ContentType.JSON).body(payload)
+		  .when()
+		  .post(Routes.saveQuoteAsTemplate_url);
+		 
+		 return quoteTemplate;
+	 }
 
 
 
