@@ -56,4 +56,7 @@ public class Routes {
 	public static String getJobApplicationslist_url = base_url + "/jobs/applications/{jobId}";
 	
 	
+	//URL to save quote as a template
+	public static String saveQuoteAsTemplate_url = base_url + "/freelancer/saveQuoteTemplate";
+	
 }
