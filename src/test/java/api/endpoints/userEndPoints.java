@@ -3,6 +3,7 @@ import static io.restassured.RestAssured.given;
 
 import api.payload.JobFLQuesAns;
 import api.payload.SaveQuoteTemplate;
+import api.payload.SendMilestoneQuotePayload;
 import api.payload.authentication;
 import api.utilities.TokenStore;
 import io.restassured.http.ContentType;
@@ -197,7 +198,14 @@ public class userEndPoints {
 	 }
 
 
-
+	 public static Response sendMilestoneQuote(String token, SendMilestoneQuotePayload payload, int jobid) {
+		 
+		 Response milestoneQuote = given().accept(ContentType.JSON).auth().oauth2(token)
+		 .pathParam("jobid", jobid).contentType(ContentType.JSON).body(payload)
+		 .when()
+		 .post(Routes.sendMilestoneQuote_url);
+		 return milestoneQuote;
+	 }
 
 
 

@@ -59,4 +59,7 @@ public class Routes {
 	//URL to save quote as a template
 	public static String saveQuoteAsTemplate_url = base_url + "/freelancer/saveQuoteTemplate";
 	
+	//URL to send milestone quote for a job
+	public static String sendMilestoneQuote_url = base_url + "/freelancer/jobs/{jobid}/quote/milestone";
+	
 }

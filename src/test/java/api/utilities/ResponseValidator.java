@@ -35,8 +35,7 @@ public class ResponseValidator {
 
     //  Validate field is not null
     public static void validateFieldNotNull(Response res, String path) {
-        Assert.assertNotNull(
-                res.jsonPath().get(path),
+        Assert.assertNotNull(res.jsonPath().get(path),
                 path + " is null"
         );
     }
@@ -54,10 +53,7 @@ public class ResponseValidator {
 
     //  Validate field equals expected value
     public static void validateFieldEquals(Response res, String path, Object expected) {
-        Assert.assertEquals(
-                res.jsonPath().get(path),
-                expected,
-                "Mismatch at " + path
+        Assert.assertEquals(res.jsonPath().get(path),expected, "Mismatch at " + path
         );
     }
     
