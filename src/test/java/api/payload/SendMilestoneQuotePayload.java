@@ -2,6 +2,8 @@ package api.payload;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class SendMilestoneQuotePayload {
   /*
    {
@@ -34,6 +36,7 @@ public String AutoAcceptDate;
 public boolean IsPremium;
 public boolean ShareContactInformation;
 public String EffectiveDate;
+
 
 
 
@@ -182,7 +185,7 @@ public void setEffectiveDate(String effectiveDate) {
 
 
 
-
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class Milestone {
 
 		private String MilestoneName;
@@ -190,6 +193,9 @@ public void setEffectiveDate(String effectiveDate) {
 		private int Amount;
 		private boolean ValidAmount;
 		private String dateClassString;
+		public String  MilestoneId ;
+		
+		
 		public String getMilestoneName() {
 			return MilestoneName;
 		}
@@ -220,6 +226,13 @@ public void setEffectiveDate(String effectiveDate) {
 		public void setDateClassString(String dateClassString) {
 			this.dateClassString = dateClassString;
 		}
+		public String getMilestoneId() {
+			return MilestoneId;
+		}
+		public void setMilestoneId(String MilestoneId) {
+			this.MilestoneId = MilestoneId;
+		}
+		
 		
 		
 	}

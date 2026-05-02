@@ -17,7 +17,7 @@ public class SendMilestoneQuoteTest {
 	public static void sendMilestoneQuoteTest()
 	{
 		SendMilestoneQuotePayload payload = new SendMilestoneQuotePayload();
-		payload.AutoAcceptDate = "2026-04-30T00:00:00.000Z";
+		payload.AutoAcceptDate = "2026-05-01T00:00:00.000Z";
 		payload.EffectiveDate = "flAll";
 		payload.IsPremium = false;
 		payload.PrivateTransactions = false;
@@ -35,17 +35,29 @@ public class SendMilestoneQuoteTest {
 		milestone.setAmount(111);
 		milestone.setValidAmount(true);
 		milestone.setDateClassString("g-input g-input--date g-input--small paddingBottomSmall");
+	//	milestone.setMilestoneId(null);
 		
 		List<SendMilestoneQuotePayload.Milestone> milestonesList = new ArrayList<>();
 		milestonesList.add(milestone);
 		
 		payload.setMilestones(milestonesList);
 		
-		Response milestoneQuote = userEndPoints.sendMilestoneQuote(TokenStore.getToken("GCLI03572832T"), payload, 2114515);
+		Response milestoneQuote = userEndPoints.sendMilestoneQuote(TokenStore.getToken("GCLI03572832T"), payload, 2114499);
 		milestoneQuote.then().log().all();
 		
 		ResponseValidator.validateStatus(milestoneQuote, 201);
 		ResponseValidator.validateFieldNotNull(milestoneQuote, "Data.Milestones[0].MilestoneId");
-	
+		ResponseValidator.validateFieldEquals(milestoneQuote, "Data.Milestones[0].MilestoneName", "q2");
+		
+		
+		String str = milestoneQuote.jsonPath().getString("Data.Milestones[0].MilestoneId");
+		milestone.setMilestoneId(str);
+		payload.setMilestones(milestonesList);
+		
+		//edit quote
+		Response editMilestoneQuote = userEndPoints.sendMilestoneQuote(TokenStore.getToken("GCLI03572832T"), payload, 2114499);
+		editMilestoneQuote.then().log().all();
+
+		
 	}
 }
