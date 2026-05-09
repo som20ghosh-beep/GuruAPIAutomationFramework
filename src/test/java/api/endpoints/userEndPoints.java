@@ -1,6 +1,7 @@
 package api.endpoints;
 import static io.restassured.RestAssured.given;
 
+import api.payload.HourlyQuotePayload;
 import api.payload.JobFLQuesAns;
 import api.payload.SaveQuoteTemplate;
 import api.payload.SendMilestoneQuotePayload;
@@ -208,7 +209,15 @@ public class userEndPoints {
 	 }
 
 
-
+	 public static Response sendHourlyQuote(String token, HourlyQuotePayload payload, int jobid)
+	 {
+		 Response hourlyquote = given().accept(ContentType.JSON).auth().oauth2(token)
+		  .contentType(ContentType.JSON).pathParam("jobid", jobid)
+		  .body(payload)
+		  .when()
+		  .post(Routes.sendHourlyQuote_url);
+		 return hourlyquote;
+	 }
 
 
 }
