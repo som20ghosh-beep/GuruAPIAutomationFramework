@@ -64,4 +64,7 @@ public class Routes {
 	
 	//URL to send hourly quote for job
 	public static String sendHourlyQuote_url = base_url + "/freelancer/jobs/{jobid}/quote/hourlyinternal";
+	
+	//URL to send task based quote for job
+	public static String sendTaskBasedQuote_url = base_url + "/freelancer/jobs/{jobid}/quote/taskinternal";
 }

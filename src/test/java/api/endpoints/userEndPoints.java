@@ -5,6 +5,7 @@ import api.payload.HourlyQuotePayload;
 import api.payload.JobFLQuesAns;
 import api.payload.SaveQuoteTemplate;
 import api.payload.SendMilestoneQuotePayload;
+import api.payload.SendTaskBasedQuotePayload;
 import api.payload.authentication;
 import api.utilities.TokenStore;
 import io.restassured.http.ContentType;
@@ -220,4 +221,13 @@ public class userEndPoints {
 	 }
 
 
+	 public static Response sendTaskBasedQuote(String token, SendTaskBasedQuotePayload payload, int jobid)
+	 {
+		 Response taskBasedQuote = given().accept(ContentType.JSON).auth().oauth2(token)
+		  .contentType(ContentType.JSON).pathParam("jobid", jobid)
+		  .body(payload)
+		  .when()
+		  .post(Routes.sendTaskBasedQuote_url);
+		 return taskBasedQuote;
+	 }
 }
