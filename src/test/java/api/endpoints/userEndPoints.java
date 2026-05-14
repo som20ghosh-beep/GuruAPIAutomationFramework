@@ -230,4 +230,24 @@ public class userEndPoints {
 		  .post(Routes.sendTaskBasedQuote_url);
 		 return taskBasedQuote;
 	 }
+	 
+	 
+	 public static Response getEmpQuoteDetails(String token, int jobId)
+	 {
+		  Response empQuoteDetails =  given().accept(ContentType.JSON).auth().oauth2(token)
+		  .pathParam("jobId", jobId)
+		  .when()
+		  .get(Routes.getEmpQuoteDetails_url);
+		  return empQuoteDetails;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 }

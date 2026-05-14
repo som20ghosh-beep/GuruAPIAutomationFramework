@@ -67,4 +67,7 @@ public class Routes {
 	
 	//URL to send task based quote for job
 	public static String sendTaskBasedQuote_url = base_url + "/freelancer/jobs/{jobid}/quote/taskinternal";
+	
+	//URL to get quote count and details
+	public static String getEmpQuoteDetails_url = base_url + "/employer/jobs/{jobId}/quotes/filter";
 }
